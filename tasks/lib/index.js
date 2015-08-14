@@ -2,6 +2,7 @@
 var grunt = require('grunt');
 var git = require('./git');
 var transaction = require('./transaction');
+var versionUtil = require('./versionUtil')
 
 module.exports = {
 
@@ -20,14 +21,12 @@ module.exports = {
             return grunt.fail.fatal('Version format invalid!');
         }
 
-        json.version = newVersion;
-        grunt.file.write(packageFile, JSON.stringify(json));
+        versionUtil.replace(packageFile, newVersion);
 
         git.commit(version, function (result) {
             if (result) {
                 grunt.fail.fatal('Git commit failed: ' + arguments[1].stdout);
-                json.version = trans.rollback();
-                grunt.file.write(packageFile, JSON.stringify(json));
+                versionUtil.replace(packageFile, trans.rollback());
             } else {
                 grunt.log.ok('Success');
             }

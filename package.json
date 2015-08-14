@@ -1,7 +1,7 @@
 {
   "name": "grunt-pump-version",
-  "description": "The best Grunt plugin ever.",
-  "version": "0.1.0",
+  "description": "Pump project version easily",
+  "version": "0.1.2",
   "homepage": "https://github.com/ufo22940268/PumpVersion",
   "author": {
     "name": "Frank Cheng",

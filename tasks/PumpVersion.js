@@ -10,13 +10,17 @@
 
 var lib = require('./lib');
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
-  // Please see the Grunt documentation for more information regarding task
-  // creation: http://gruntjs.com/creating-tasks
+    // Please see the Grunt documentation for more information regarding task
+    // creation: http://gruntjs.com/creating-tasks
 
-  grunt.registerMultiTask('PumpVersion', 'The best Grunt plugin ever.', function() {
-      lib.run('package.json', 'addHotfix');
-  });
+    grunt.registerMultiTask('hotfix', 'Pump project hotfix version easily', function () {
+        lib.run('package.json', 'hotfix');
+    });
+
+    grunt.registerMultiTask('feature', 'Pump project feature version easily', function () {
+        lib.run('package.json', 'feature');
+    });
 
 };
