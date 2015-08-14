@@ -22,5 +22,4 @@ module.exports = function (grunt) {
     grunt.registerMultiTask('feature', 'Pump project feature version easily', function () {
         lib.run('package.json', 'feature');
     });
-
 };
