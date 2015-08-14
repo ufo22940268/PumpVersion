@@ -7,7 +7,7 @@ module.exports = {
         if (grunt.file.exists('.git')) {
             grunt.util.spawn({
                 cmd: 'git',
-                args: ['commit', '-m', 'Pump version ' + version]
+                args: ['commit', '-m', '"Pump version ' + version + '"']
             }, callback);
         } else {
             callback();

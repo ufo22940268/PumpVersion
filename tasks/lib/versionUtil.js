@@ -11,24 +11,10 @@ module.exports = {
         }
     },
 
-    minusHotfix: function (version) {
-        var match = /\d+\.\d+\.(\d+)/.exec(version);
-        if (match) {
-            return version.replace(/(\d+\.\d+\.)\d+/, "$1" + (parseInt(match[1]) - 1));
-        }
-    },
-
     addFeature: function (version) {
         var match = /\d+\.(\d+)\.\d+/.exec(version);
         if (match) {
             return version.replace(/(\d+\.)\d+(\.\d+)/, "$1" + (parseInt(match[1]) + 1) + "$2");
-        }
-    },
-
-    minusFeature: function (version) {
-        var match = /\d+\.(\d+)\.\d+/.exec(version);
-        if (match) {
-            return version.replace(/(\d+\.)\d+(\.\d+)/, "$1" + (parseInt(match[1]) - 1) + "$2");
         }
     }
 };

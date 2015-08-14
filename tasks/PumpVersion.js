@@ -16,7 +16,7 @@ module.exports = function(grunt) {
   // creation: http://gruntjs.com/creating-tasks
 
   grunt.registerMultiTask('PumpVersion', 'The best Grunt plugin ever.', function() {
-      lib.run('package.json', 'hotfix');
+      lib.run('package.json', 'addHotfix');
   });
 
 };
